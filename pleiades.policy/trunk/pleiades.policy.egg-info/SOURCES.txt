@@ -1,0 +1,14 @@
+README.txt
+setup.cfg
+setup.py
+pleiades/__init__.py
+pleiades.policy.egg-info/PKG-INFO
+pleiades.policy.egg-info/SOURCES.txt
+pleiades.policy.egg-info/dependency_links.txt
+pleiades.policy.egg-info/entry_points.txt
+pleiades.policy.egg-info/namespace_packages.txt
+pleiades.policy.egg-info/not-zip-safe
+pleiades.policy.egg-info/requires.txt
+pleiades.policy.egg-info/top_level.txt
+pleiades/policy/__init__.py
+pleiades/policy/tests.py
