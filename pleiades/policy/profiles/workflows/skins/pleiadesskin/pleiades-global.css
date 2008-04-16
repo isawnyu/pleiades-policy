@@ -1,0 +1,65 @@
+/*
+** Pleiades global CSS.
+*/
+
+#portal-top {
+    background-color: #003466;
+}
+
+#portal-globalnav li.plain a {
+    background-color: white;
+}
+
+#portal-globalnav li.selected a {
+    color: #003466;
+}
+
+#portal-breadcrumbs {
+    background-color: white;
+}
+
+a:hover {
+    color: #003466;
+}
+
+#portal-siteactions li a {
+    border-width: 0px;
+    color: #BBB;
+    background: transparent;
+}
+
+#portal-siteactions li a:hover {
+    border-width: 0px;
+    color: white;
+    background: transparent;
+}
+
+.pleiades-help-link {
+    vertical-align: baseline;
+    position: relative;
+    bottom: 0.33em;
+}
+
+.pleiades-help-link a {
+    font-size: 85%;
+    font-weight: normal;
+    font-style: italic;
+    color: #76797c;
+}
+
+#document-info-section {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+
+[xml\:lang="grc"], [xml\:lang="la-Grek"] {
+    font-family: "GentiumAlt","Gentium","Arial Unicode MS","Galilee Unicode Gk", "New Athena Unicode", "Athena Unicode", "Palatino Linotype", "Titus Cyberbit Basic", "Cardo", "Vusillus Old Face", "Alphabetum", "Galatia SIL", "Code 2000", "Minion Pro", "GeorgiaGreek", "Vusillus Old Face Italic", "Everson Mono", "Aristarcoj", "Porson", "Legendum", "Aisa Unicode", "Hindsight Unicode", "Caslon",  "Lucida Grande", "Verdana", "Tahoma" ;
+    font-size: 1.2em;
+}
+
+[xml\:lang="grc-Latn"], [xml\:lang="la"] {
+    font-style: italic;
+}
+
+

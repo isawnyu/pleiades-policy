@@ -1,7 +1,17 @@
 <configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:five="http://namespaces.zope.org/five"
-    i18n_domain="pleiades.policy">
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:five="http://namespaces.zope.org/five"
+  xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+  i18n_domain="pleiades.policy">
 
+  <five:registerPackage package="." initialize=".initialize" />
+    
+  <genericsetup:registerProfile
+    name="default"
+    title="Pleiades Site Policy"
+    directory="profiles/default"
+    description="Turn a Plone site into the Pleiades site."
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
 
 </configure>
