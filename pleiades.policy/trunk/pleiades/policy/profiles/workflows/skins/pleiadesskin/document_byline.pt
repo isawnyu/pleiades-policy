@@ -1,0 +1,89 @@
+<div
+    i18n:domain="plone"
+    metal:define-macro="byline"
+    tal:condition="python: site_properties.allowAnonymousViewAbout or not isAnon"
+    tal:define="creators here/Creators; contributors here/Contributors">
+
+    <div class="documentByLine">
+
+        <div id="document-last-modified-section">
+            <img alt="" src="" title="This document is locked."
+                i18n:attributes="title label_document_locked;"
+                tal:condition="isLocked"
+                tal:define="locked portal/lock_icon.gif;"
+                tal:replace="structure python:locked.tag(title='Locked')"/>
+            <span i18n:translate="box_last_modified">last modified:</span>
+            <span id="last-modified-time"
+                tal:content="python:toLocalizedTime(here.ModificationDate(),long_format=1)">August 16, 2001 at 23:35:59 </span>
+            <span class="state-expired"
+                i18n:translate="time_expired"
+                tal:condition="python:portal.isExpired(here)"> &#x2014; expired </span>
+            <span id="is-locked"
+                tal:condition="isLocked"
+                tal:define="locked portal/lock_icon.gif"
+                ><img alt="Object locked" src=""
+                    i18n:attributes="alt label_object_locked;"
+                    tal:replace="structure python:locked.tag(title='This item is locked')" /></span>
+        </div>
+        
+        <tal:creators tal:condition="creators">
+            <div  id="document-creator-section"
+                i18n:translate="label_by_author">
+                <span tal:condition="python:len(creators) == 1">author:</span> 
+                <span tal:condition="python:len(creators) != 1">authors:</span> 
+                <tal:name tal:repeat="creator creators">
+                    <span id=""
+                        tal:attributes="id string:document-creator-${repeat/creator/number}"
+                        tal:define="author python:mtool.getMemberInfo(creator)"
+                        ><a href="#"
+                            i18n:name="author"
+                            tal:attributes="href string:${portal_url}/author/${creator}"
+                            tal:condition="author"
+                            tal:content="python:author and author['fullname'] or creator"
+                            >Bob Dobalina</a
+                        ><span
+                            tal:condition="not:author"
+                            tal:replace="creator">David Sardina</span></span
+                    ><span
+                        tal:condition="not:repeat/creator/end"
+                        tal:omit-tag="">, </span></tal:name>
+            </div>
+        </tal:creators>
+        
+        <tal:contributors tal:condition="contributors">
+            <div  id="document-contributor-section"
+                i18n:translate="label_by_contributor"> 
+                <span tal:condition="python:len(creators) == 1">contributor:</span> 
+                <span tal:condition="python:len(creators) != 1">contributors:</span> 
+                <tal:name tal:repeat="contributor contributors">
+                    <span id=""
+                        tal:attributes="id string:document-contributor-${repeat/contributor/number}"
+                        tal:define="helper python:mtool.getMemberInfo(contributor)"
+                        ><a href="#"
+                            i18n:name="helper"
+                            tal:attributes="href string:${portal_url}/helper/${contributor}"
+                            tal:condition="helper"
+                            tal:content="python:helper and helper['fullname'] or contributor"
+                            >Phil Santora</a
+                        ><span
+                            tal:condition="not:helper"
+                            tal:replace="contributor">Gabby Bodard</span></span
+                    ><span
+                        tal:condition="not:repeat/contributor/end"
+                        tal:omit-tag="">, </span></tal:name>
+            </div>
+        </tal:contributors>        
+
+        <div id="document-info-section">
+            <tal:rights condition="here/Rights">
+                <span id="document-rights-section" 
+                    tal:content="here/Rights">Copyleft NiceCorp Inc.</span> &#x2014;
+            </tal:rights>
+            <span id="byline-disclaimer"><a href="" tal:attributes="href string:${context/portal_url}/disclaimer">Disclaimer</a></span>
+        </div>
+        
+        <span metal:use-macro="here/review_history/macros/review_history" />
+
+    </div>
+
+</div>

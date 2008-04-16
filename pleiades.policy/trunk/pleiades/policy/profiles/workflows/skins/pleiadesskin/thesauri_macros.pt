@@ -1,0 +1,31 @@
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  i18n:domain="plone"
+  >
+  <head><title></title></head>
+  <body>
+
+    <metal:thesaurilisting_macro
+      define-macro="thesaurilisting"
+      >
+      <tal:chunk
+        tal:define="folderContents here/portal_vocabularies/getFolderContents"
+        >
+        <ul tal:condition="folderContents">
+          <li tal:repeat="brain folderContents">
+            <a
+              tal:content="string:${brain/getId}"
+              tal:attributes="href string:${brain/getId}"
+              >
+              THESAURUS
+            </a>
+          </li>
+        </ul>
+      </tal:chunk>
+    </metal:thesaurilisting_macro>
+  </body>
+</html>
+

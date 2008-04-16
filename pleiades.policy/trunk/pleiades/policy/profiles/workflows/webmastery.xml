@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object name="robots.txt" meta_type="File">
+  <property name="title">Foo</property>
+  <property name="body">
+User-agent: *
+Disallow: /locations/
+  </property>
+</object>
+
