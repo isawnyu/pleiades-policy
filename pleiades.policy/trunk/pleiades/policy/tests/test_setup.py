@@ -31,6 +31,15 @@ class TestSetup(PleiadesPolicyTestCase):
         self.failUnless('View' in [r['name'] for r in 
                                 self.portal.permissionsOfRole('Reader') if r['selected']])
 
+    def test_structure(self):
+        self.failUnless('disclaimer' in self.portal.keys())
+        self.failUnless('front-page' in self.portal.keys())
+        self.failUnless('about-pleiades' in self.portal.keys())
+        self.failUnless('names' in self.portal.keys())
+        self.failUnless('locations' in self.portal.keys())
+        self.failUnless('places' in self.portal.keys())
+        self.failUnless('thesaurus' in self.portal.keys())
+
 
 def test_suite():
     suite = unittest.TestSuite()
