@@ -6,6 +6,9 @@ from Testing import ZopeTestCase as ztc
 from Products.PloneTestCase import PloneTestCase as ptc
 from Products.PloneTestCase.layer import onsetup
 
+ztc.installProduct('ATVocabularyManager')
+ztc.installProduct('PleiadesEntity')
+
 @onsetup
 def setup_pleiades_policy():
     """Set up the additional products required for the Pleiades site policy.
@@ -14,8 +17,6 @@ def setup_pleiades_policy():
     until the setup of the Plone site testing layer.
     """
 
-    ztc.installProduct('ATVocabularyManager')
-    ztc.installProduct('PleiadesEntity')
     # Load the ZCML configuration for the optilux.policy package.
     
     fiveconfigure.debug_mode = True
