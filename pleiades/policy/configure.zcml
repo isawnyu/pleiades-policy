@@ -2,7 +2,10 @@
   xmlns="http://namespaces.zope.org/zope"
   xmlns:five="http://namespaces.zope.org/five"
   xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-  i18n_domain="pleiades.policy">
+  i18n_domain="pleiades.policy"
+  >
+
+  <include package="pleiades.vocabulary"/>
 
   <five:registerPackage package="." initialize=".initialize" />
     
