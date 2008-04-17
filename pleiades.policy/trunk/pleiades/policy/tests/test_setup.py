@@ -38,7 +38,12 @@ class TestSetup(PleiadesPolicyTestCase):
         self.failUnless('names' in self.portal.keys())
         self.failUnless('locations' in self.portal.keys())
         self.failUnless('places' in self.portal.keys())
-        self.failUnless('thesaurus' in self.portal.keys())
+
+    def test_vocabulary_installed(self):
+        self.failUnless('vocabulary' in self.portal.keys())
+        skins = getToolByName(self.portal, 'portal_skins')
+        layer = skins.getSkinPath('Pleiades Vocabulary')
+        self.failUnless('pleiades_vocabulary_custom_templates' in layer)
 
 
 def test_suite():

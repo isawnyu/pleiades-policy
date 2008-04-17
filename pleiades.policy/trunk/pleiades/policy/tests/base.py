@@ -17,8 +17,6 @@ def setup_pleiades_policy():
     until the setup of the Plone site testing layer.
     """
 
-    # Load the ZCML configuration for the optilux.policy package.
-    
     fiveconfigure.debug_mode = True
     import pleiades.policy
     zcml.load_config('configure.zcml', pleiades.policy)
@@ -28,7 +26,8 @@ def setup_pleiades_policy():
     # should be available. This can't happen until after we have loaded
     # the ZCML.
     
-    ztc.installPackage('pleiades.policy')
+    ztc.installProduct('pleiades.policy')
+    ztc.installProduct('pleiades.vocabulary')
     
 # The order here is important: We first call the (deferred) function which
 # installs the products we need for the Pleiades package. Then, we let 
