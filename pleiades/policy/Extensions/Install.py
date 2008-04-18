@@ -1,7 +1,12 @@
 import transaction
 from Products.CMFCore.utils import getToolByName
 
-PRODUCT_DEPENDENCIES = ('ATVocabularyManager', 'PleiadesEntity', 'pleiades.vocabulary')
+PRODUCT_DEPENDENCIES = (
+    'ATVocabularyManager',
+    'PleiadesEntity', 
+    'pleiades.vocabulary',
+    'pleiades.theme'
+    )
                         
 EXTENSION_PROFILES = ('pleiades.policy:default',)
 

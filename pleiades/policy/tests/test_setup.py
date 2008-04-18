@@ -31,7 +31,7 @@ class TestSetup(PleiadesPolicyTestCase):
         self.failUnless('View' in [r['name'] for r in 
                                 self.portal.permissionsOfRole('Reader') if r['selected']])
 
-    def test_structure(self):
+    def test_policy_structure(self):
         self.failUnless('disclaimer' in self.portal.keys())
         self.failUnless('front-page' in self.portal.keys())
         self.failUnless('about-pleiades' in self.portal.keys())
@@ -39,12 +39,15 @@ class TestSetup(PleiadesPolicyTestCase):
         self.failUnless('locations' in self.portal.keys())
         self.failUnless('places' in self.portal.keys())
 
-    def test_vocabulary_installed(self):
+    def test_vocabulary_setup(self):
         self.failUnless('vocabulary' in self.portal.keys())
-        skins = getToolByName(self.portal, 'portal_skins')
-        layer = skins.getSkinPath('Pleiades Vocabulary')
-        self.failUnless('pleiades_vocabulary_custom_templates' in layer)
 
+    def test_theme_setup(self):
+        skins = getToolByName(self.portal, 'portal_skins')
+        layer = skins.getSkinPath('Pleiades Theme')
+        self.failUnless('pleiades_theme_custom_images' in layer)
+        self.failUnless('pleiades_theme_custom_templates' in layer)
+        self.failUnless('pleiades_theme_styles' in layer)
 
 def test_suite():
     suite = unittest.TestSuite()
