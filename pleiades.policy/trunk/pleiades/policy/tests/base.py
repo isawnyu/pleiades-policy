@@ -28,13 +28,16 @@ def setup_pleiades_policy():
     
     ztc.installProduct('pleiades.policy')
     ztc.installProduct('pleiades.vocabulary')
+    ztc.installProduct('pleiades.theme')
     
 # The order here is important: We first call the (deferred) function which
 # installs the products we need for the Pleiades package. Then, we let 
 # PloneTestCase set up this product on installation.
 
 setup_pleiades_policy()
-ptc.setupPloneSite(products=['ATVocabularyManager', 'PleiadesEntity', 'pleiades.policy'])
+ptc.setupPloneSite(
+    products=['ATVocabularyManager', 'PleiadesEntity', 'pleiades.policy']
+    )
 
 class PleiadesPolicyTestCase(ptc.PloneTestCase):
     """We use this base class for all the tests in this package. If necessary,
