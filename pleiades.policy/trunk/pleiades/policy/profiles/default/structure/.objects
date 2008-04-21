@@ -1,6 +1,7 @@
 about-pleiades,Document
 disclaimer,Document
 front-page,Document
+vocabulary,Folder
 places,PlaceContainer
 locations,LocationContainer
 names,Large Plone Folder
