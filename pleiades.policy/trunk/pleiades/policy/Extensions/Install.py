@@ -3,7 +3,8 @@ from Products.CMFCore.utils import getToolByName
 
 PRODUCT_DEPENDENCIES = (
     'ATVocabularyManager',
-    'PleiadesEntity', 
+    'PleiadesEntity',
+    'pleiades.workspace',
     'pleiades.vocabulary',
     'pleiades.theme'
     )

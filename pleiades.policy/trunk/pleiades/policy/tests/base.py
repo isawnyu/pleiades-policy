@@ -29,6 +29,7 @@ def setup_pleiades_policy():
     ztc.installProduct('pleiades.policy')
     ztc.installProduct('pleiades.vocabulary')
     ztc.installProduct('pleiades.theme')
+    ztc.installProduct('pleiades.workspace')
     
 # The order here is important: We first call the (deferred) function which
 # installs the products we need for the Pleiades package. Then, we let 
