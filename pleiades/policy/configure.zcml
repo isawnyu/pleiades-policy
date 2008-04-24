@@ -5,6 +5,7 @@
   i18n_domain="pleiades.policy"
   >
 
+  <include package="pleiades.workspace"/>
   <include package="pleiades.theme"/>
   <include package="pleiades.vocabulary"/>
 
