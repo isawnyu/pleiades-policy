@@ -45,6 +45,7 @@ class TestSetup(PleiadesPolicyTestCase):
     def test_theme_setup(self):
         skins = getToolByName(self.portal, 'portal_skins')
         layer = skins.getSkinPath('Pleiades Theme')
+        import pdb; pdb.set_trace()
         self.failUnless('pleiades_theme_custom_images' in layer)
         self.failUnless('pleiades_theme_custom_templates' in layer)
         self.failUnless('pleiades_theme_styles' in layer)
