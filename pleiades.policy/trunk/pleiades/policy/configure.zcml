@@ -5,6 +5,8 @@
   i18n_domain="pleiades.policy"
   >
 
+  <include package="zgeo.plone.geographer"/>
+  <include package="zgeo.plone.kml"/>
   <include package="pleiades.workspace"/>
   <include package="pleiades.theme"/>
   <include package="pleiades.vocabulary"/>

@@ -4,6 +4,8 @@ from Products.CMFCore.utils import getToolByName
 PRODUCT_DEPENDENCIES = (
     'ATVocabularyManager',
     'PleiadesEntity',
+    'zgeo.plone.geographer',
+    'zgeo.plone.kml',
     'pleiades.workspace',
     'pleiades.vocabulary',
     'pleiades.theme'
