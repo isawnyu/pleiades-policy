@@ -4,6 +4,10 @@
  <action-provider name="portal_workflow"/>
  <action-provider name="portal_types"/>
  <action-provider name="portal_actions">
+  <action title="Workspaces" action_id="workspaces" category="portal_tabs"
+     condition_expr="" url_expr="string:$portal_url/workspaces" visible="True">
+   <permission>View</permission>
+  </action>
   <action title="Locations" action_id="locations" category="portal_tabs"
      condition_expr="" url_expr="string:$portal_url/locations" visible="True">
    <permission>View</permission>
