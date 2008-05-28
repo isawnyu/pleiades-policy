@@ -37,6 +37,10 @@
    <element value="Plone Site"/>
    <element value="TempFolder"/>
    <element value="VocabularyLibrary"/>
+   <element value="Place"/>
+   <element value="PlacefulAssociation"/>
+   <element value="Name"/>
+   <element value="Location"/>
   </property>
   <property name="enable_wf_state_filtering" type="boolean">False</property>
   <property name="wf_states_to_show" type="lines"/>
