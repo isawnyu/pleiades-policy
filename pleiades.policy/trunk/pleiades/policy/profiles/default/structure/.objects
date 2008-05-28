@@ -5,3 +5,4 @@ vocabulary,Folder
 places,PlaceContainer
 locations,LocationContainer
 names,Large Plone Folder
+workspaces,Large Plone Folder
