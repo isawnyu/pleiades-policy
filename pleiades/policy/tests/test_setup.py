@@ -38,6 +38,7 @@ class TestSetup(PleiadesPolicyTestCase):
         self.failUnless('names' in self.portal.keys())
         self.failUnless('locations' in self.portal.keys())
         self.failUnless('places' in self.portal.keys())
+        self.failUnless('workspaces' in self.portal.keys())
 
     def test_vocabulary_setup(self):
         self.failUnless('vocabulary' in self.portal.keys())
