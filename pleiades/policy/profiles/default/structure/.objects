@@ -3,6 +3,7 @@ disclaimer,Document
 front-page,Document
 vocabulary,Folder
 places,PlaceContainer
+features,FeatureContainer
 locations,LocationContainer
-names,Large Plone Folder
+names,NameContainer
 workspaces,Workspace Folder
