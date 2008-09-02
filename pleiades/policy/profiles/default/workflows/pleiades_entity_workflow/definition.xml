@@ -112,7 +112,7 @@
  </state>
 
  <transition transition_id="publish" new_state="published"
-             title="Reviewer makes content available externally"
+             title="Publish"
              trigger="USER"
              before_script="" after_script=""
              i18n:attributes="title">
@@ -126,7 +126,7 @@
    <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="reject"  new_state="drafting"
+ <transition transition_id="reject" new_state="drafting"
              title="Send back"
              trigger="USER"
              before_script="" after_script=""
@@ -142,7 +142,7 @@
   </guard>
  </transition>
  <transition transition_id="retract" new_state="drafting"
-             title="Member retracts submission"
+             title="Retract submission"
              trigger="USER"
              before_script="" after_script=""
              i18n:attributes="title">
@@ -157,7 +157,7 @@
   </guard>
  </transition>
  <transition transition_id="submit"  new_state="pending" 
-             title="Submit for publication"
+             title="Submit for review"
              trigger="USER"
              before_script="" after_script=""
              i18n:attributes="title">
@@ -166,7 +166,7 @@
   </description>
   <action url="%(content_url)s/content_status_modify?workflow_action=submit"
           category="workflow"
-          i18n:translate="">Submit for publication</action>
+          i18n:translate="">Submit for review</action>
   <guard>
    <guard-permission>Request review</guard-permission>
   </guard>
