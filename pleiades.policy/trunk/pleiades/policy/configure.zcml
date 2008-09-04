@@ -10,7 +10,7 @@
   <include package="zgeo.plone.atom"/>
   <include package="pleiades.workspace"/>
   <include package="pleiades.theme"/>
-  <include package="pleiades.vocabulary"/>
+  <include package="pleiades.vocabularies"/>
 
   <five:registerPackage package="." initialize=".initialize" />
     
