@@ -6,8 +6,9 @@ PRODUCT_DEPENDENCIES = (
     'PleiadesEntity',
     'zgeo.plone.geographer',
     'zgeo.plone.kml',
+    'zgeo.plone.atom',
     'pleiades.workspace',
-    'pleiades.vocabulary',
+    'pleiades.vocabularies',
     'pleiades.theme'
     )
                         
