@@ -11,19 +11,35 @@
       <role name="Owner"/>
       <role name="Contributor"/>
     </permission>
-
-<!--
-setDefaultRoles('PleiadesEntity: Add Location', ('Manager','Owner'))
-setDefaultRoles('PleiadesEntity: Add TemporalAttestation', ('Manager','Owner'))
-setDefaultRoles('PleiadesEntity: Add Reference', ('Manager','Owner'))
-setDefaultRoles('PleiadesEntity: Add SecondaryReference', ('Manager','Owner'))
-setDefaultRoles('PleiadesEntity: Add PrimaryReference', ('Manager','Owner'))
-setDefaultRoles('PleiadesEntity: Add Feature', ('Manager','Owner'))
-setDefaultRoles('PleiadesEntity: Add NameContainer', ('Manager','Owner'))
-setDefaultRoles('PleiadesEntity: Add LocationContainer', ('Manager','Owner'))
-setDefaultRoles('PleiadesEntity: Add PlaceContainer', ('Manager','Owner'))
-setDefaultRoles('PleiadesEntity: Add Place', ('Manager','Owner'))
-setDefaultRoles('PleiadesEntity: Add FeatureContainer', ('Manager','Owner'))
--->
+    <permission name="PleiadesEntity: Add Location" acquire="True">
+      <role name="Manager"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+    <permission name="PleiadesEntity: Add TemporalAttestation" acquire="True">
+      <role name="Manager"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+    <permission name="PleiadesEntity: Add SecondaryReference" acquire="True">
+      <role name="Manager"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+    <permission name="PleiadesEntity: Add PrimaryReference" acquire="True">
+      <role name="Manager"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+    <permission name="PleiadesEntity: Add Feature" acquire="True">
+      <role name="Manager"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+    <permission name="PleiadesEntity: Add Place" acquire="True">
+      <role name="Manager"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
   </permissions>
 </rolemap>
