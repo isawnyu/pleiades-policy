@@ -6,15 +6,18 @@ from Products.CMFCore.utils import getToolByName
 class TestNameCreation(PleiadesPolicyTestCase):
 
     def afterSetUp(self):
-        self.portal.error_log._ignored_exceptions = ()
         self.workflow = getToolByName(self.portal, 'portal_workflow')
         self.acl_users = getToolByName(self.portal, 'acl_users')
         self.names = self.portal['names']
+        self.locations = self.portal['locations']
         self.names.manage_addLocalRoles('member', ['Contributor'])
+        self.locations.manage_addLocalRoles('member', ['Contributor'])
         self.acl_users._doAddUser('member', 'secret', ['Member',],[])
         self.setRoles(('Manager',))
         self.workflow.doActionFor(self.names, 'submit')
         self.workflow.doActionFor(self.names, 'publish')
+        self.workflow.doActionFor(self.locations, 'submit')
+        self.workflow.doActionFor(self.locations, 'publish')
 
     def test_create_name(self):
         self.login('member')
@@ -28,6 +31,15 @@ class TestNameCreation(PleiadesPolicyTestCase):
                 )
         name = self.portal['names'][nid]
         self.assertEquals(u'Foo Bar', name.nameTransliterated)
+
+    def test_create_location(self):
+        self.login('member')
+        lid = self.locations.invokeFactory(
+                'Location',
+                geometry='Point: [0.0, 0.0]',
+                )
+        location = self.portal['locations'][lid]
+        self.assertEquals('Point: [0.0, 0.0]', location.getGeometry())
 
 def test_suite():
     suite = unittest.TestSuite()
