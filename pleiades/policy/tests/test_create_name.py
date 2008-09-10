@@ -32,6 +32,13 @@ class TestNameCreation(PleiadesPolicyTestCase):
         name = self.portal['names'][nid]
         self.assertEquals(u'Foo Bar', name.nameTransliterated)
 
+        name.invokeFactory(
+            'SecondaryReference',
+            id='foo',
+            title='foo',
+            )
+        self.assertEquals('foo', name['foo'].Title())
+
     def test_create_location(self):
         self.login('member')
         lid = self.locations.invokeFactory(
@@ -40,6 +47,10 @@ class TestNameCreation(PleiadesPolicyTestCase):
                 )
         location = self.portal['locations'][lid]
         self.assertEquals('Point: [0.0, 0.0]', location.getGeometry())
+
+        # and deletion
+        self.locations.manage_delObjects([lid])
+        self.assert_(lid not in self.locations.keys())
 
 def test_suite():
     suite = unittest.TestSuite()
