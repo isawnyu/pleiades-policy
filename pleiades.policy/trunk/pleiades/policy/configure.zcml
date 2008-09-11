@@ -1,5 +1,6 @@
 <configure
   xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
   xmlns:five="http://namespaces.zope.org/five"
   xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
   i18n_domain="pleiades.policy"
@@ -11,9 +12,17 @@
   <include package="pleiades.workspace"/>
   <include package="pleiades.theme"/>
   <include package="pleiades.vocabularies"/>
+  <include package="pleiades.kml"/>
 
   <five:registerPackage package="." initialize=".initialize" />
-    
+
+  <browser:page
+    for="Products.PleiadesEntity.content.interfaces.IPlaceContainer"
+    name="create-collections"
+    class=".browser.CreateCollections"
+    permission="cmf.ModifyPortalContent"
+    />
+
   <genericsetup:registerProfile
     name="default"
     title="Pleiades Site Policy"

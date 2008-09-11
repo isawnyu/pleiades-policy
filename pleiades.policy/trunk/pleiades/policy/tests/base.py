@@ -17,10 +17,10 @@ def setup_pleiades_policy():
     until the setup of the Plone site testing layer.
     """
 
-    #fiveconfigure.debug_mode = True
-    #import pleiades.policy
-    #zcml.load_config('configure.zcml', pleiades.policy)
-    #fiveconfigure.debug_mode = False
+    fiveconfigure.debug_mode = True
+    import pleiades.policy
+    zcml.load_config('configure.zcml', pleiades.policy)
+    fiveconfigure.debug_mode = False
     
     # We need to tell the testing framework that these products
     # should be available. This can't happen until after we have loaded
@@ -30,8 +30,9 @@ def setup_pleiades_policy():
     ztc.installPackage('pleiades.vocabulary')
     ztc.installPackage('pleiades.theme')
     ztc.installPackage('pleiades.workspace')
-    ztc.installPackage('pleiades.plone.geographer')
-    ztc.installPackage('pleiades.plone.kml')
+    ztc.installPackage('zgeo.plone.geographer')
+    ztc.installPackage('zgeo.plone.kml')
+    ztc.installPackage('pleiades.kml')
 
     
 # The order here is important: We first call the (deferred) function which
