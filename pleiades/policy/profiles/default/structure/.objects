@@ -1,6 +1,6 @@
 disclaimer,Document
 front-page,Document
-vocabulary,Folder
+vocabularies,Folder
 places,PlaceContainer
 features,FeatureContainer
 locations,LocationContainer

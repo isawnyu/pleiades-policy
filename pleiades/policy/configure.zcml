@@ -13,6 +13,7 @@
   <include package="pleiades.theme"/>
   <include package="pleiades.vocabularies"/>
   <include package="pleiades.kml"/>
+  <include package="pleiades.atom"/>
 
   <five:registerPackage package="." initialize=".initialize" />
 
