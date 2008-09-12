@@ -34,7 +34,6 @@ class TestSetup(PleiadesPolicyTestCase):
     def test_policy_structure(self):
         self.failUnless('disclaimer' in self.portal.keys())
         self.failUnless('front-page' in self.portal.keys())
-        self.failUnless('about-pleiades' in self.portal.keys())
         self.failUnless('names' in self.portal.keys())
         self.failUnless('locations' in self.portal.keys())
         self.failUnless('features' in self.portal.keys())
@@ -42,7 +41,7 @@ class TestSetup(PleiadesPolicyTestCase):
         self.failUnless('workspaces' in self.portal.keys())
 
     def test_vocabulary_setup(self):
-        self.failUnless('vocabulary' in self.portal.keys())
+        self.failUnless('vocabularies' in self.portal.keys())
 
     def test_theme_setup(self):
         skins = getToolByName(self.portal, 'portal_skins')

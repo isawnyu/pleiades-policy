@@ -9,7 +9,9 @@ PRODUCT_DEPENDENCIES = (
     'zgeo.plone.atom',
     'pleiades.workspace',
     'pleiades.vocabularies',
-    'pleiades.theme'
+    'pleiades.theme',
+    'pleiades.kml',
+    'pleiades.atom'
     )
                         
 EXTENSION_PROFILES = ('pleiades.policy:default',)
