@@ -14,6 +14,7 @@
   <include package="pleiades.vocabularies"/>
   <include package="pleiades.kml"/>
   <include package="pleiades.atom"/>
+  <include package="pleiades.openlayers"/>
 
   <five:registerPackage package="." initialize=".initialize" />
 
