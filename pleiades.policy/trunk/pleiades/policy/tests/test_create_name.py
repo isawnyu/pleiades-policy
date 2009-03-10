@@ -8,49 +8,28 @@ class TestNameCreation(PleiadesPolicyTestCase):
     def afterSetUp(self):
         self.workflow = getToolByName(self.portal, 'portal_workflow')
         self.acl_users = getToolByName(self.portal, 'acl_users')
-        self.names = self.portal['names']
-        self.locations = self.portal['locations']
-        self.names.manage_addLocalRoles('member', ['Contributor'])
-        self.locations.manage_addLocalRoles('member', ['Contributor'])
+        self.features = self.portal['features']
+        self.features.manage_addLocalRoles('member', ['Contributor'])
         self.acl_users._doAddUser('member', 'secret', ['Member',],[])
         self.setRoles(('Manager',))
-        self.workflow.doActionFor(self.names, 'submit')
-        self.workflow.doActionFor(self.names, 'publish')
-        self.workflow.doActionFor(self.locations, 'submit')
-        self.workflow.doActionFor(self.locations, 'publish')
+        self.workflow.doActionFor(self.features, 'submit')
+        self.workflow.doActionFor(self.features, 'publish')
 
-    def test_create_name(self):
+    def test_create_feature(self):
         self.login('member')
-        nameTransliterated = u'Foo Bar'
-        nid = self.names.invokeFactory(
-                'Name',
-                title=nameTransliterated.encode('utf-8'),
-                nameTransliterated=nameTransliterated.encode('utf-8'),
-                nameAttested=u'',
-                nameLanguage=u''
+        fid = self.features.invokeFactory(
+                'Feature',
+                'foo bar',
+                title=u'Foo Bar',
+                featureType='settlement'
                 )
-        name = self.portal['names'][nid]
-        self.assertEquals(u'Foo Bar', name.nameTransliterated)
-
-        name.invokeFactory(
-            'SecondaryReference',
-            id='foo',
-            title='foo',
-            )
-        self.assertEquals('foo', name['foo'].Title())
-
-    def test_create_location(self):
-        self.login('member')
-        lid = self.locations.invokeFactory(
-                'Location',
-                geometry='Point: [0.0, 0.0]',
-                )
-        location = self.portal['locations'][lid]
-        self.assertEquals('Point: [0.0, 0.0]', location.getGeometry())
+        feature = self.features[fid]
+        self.assertEquals(u'Foo Bar', feature.title)
 
         # and deletion
-        self.locations.manage_delObjects([lid])
-        self.assert_(lid not in self.locations.keys())
+        self.features.manage_delObjects([fid])
+        self.assert_(fid not in self.features.keys())
+        
 
 def test_suite():
     suite = unittest.TestSuite()

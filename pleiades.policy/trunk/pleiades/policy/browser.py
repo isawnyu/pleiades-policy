@@ -53,7 +53,7 @@ class CreateCollections(BrowserView):
             topic = context[tid]
             c = topic.addCriterion('getTimePeriods', 'ATSimpleStringCriterion')
             c.setValue(ko)
-            c = topic.addCriterion('Type', 'ATPortalTypeCriterion')
+            c = topic.addCriterion('portal_type', 'ATPortalTypeCriterion')
             c.setValue('Place')
             topic.setSortCriterion('sortable_title', reversed=False)
         
@@ -81,7 +81,7 @@ class CreateCollections(BrowserView):
             topic = context[tid]
             c = topic.addCriterion('getFeatureType', 'ATSimpleStringCriterion')
             c.setValue(ko)
-            c = topic.addCriterion('Type', 'ATPortalTypeCriterion')
+            c = topic.addCriterion('portal_type', 'ATPortalTypeCriterion')
             c.setValue('Place')
             topic.setSortCriterion('sortable_title', reversed=False)
         

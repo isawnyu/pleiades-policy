@@ -3,6 +3,5 @@ front-page,Document
 vocabularies,Folder
 places,PlaceContainer
 features,FeatureContainer
-locations,LocationContainer
-names,NameContainer
+references,ReferenceContainer
 workspaces,Workspace Folder
