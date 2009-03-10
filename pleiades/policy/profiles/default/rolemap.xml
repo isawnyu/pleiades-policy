@@ -16,11 +16,6 @@
       <role name="Owner"/>
       <role name="Contributor"/>
     </permission>
-    <permission name="PleiadesEntity: Add TemporalAttestation" acquire="True">
-      <role name="Manager"/>
-      <role name="Owner"/>
-      <role name="Contributor"/>
-    </permission>
     <permission name="PleiadesEntity: Add SecondaryReference" acquire="True">
       <role name="Manager"/>
       <role name="Owner"/>

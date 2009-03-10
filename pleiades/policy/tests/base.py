@@ -7,6 +7,8 @@ from Products.PloneTestCase import PloneTestCase as ptc
 from Products.PloneTestCase.layer import onsetup
 
 ztc.installProduct('ATVocabularyManager')
+ztc.installProduct('Products.CompoundField')
+ztc.installProduct('Products.ATBackRef')
 ztc.installProduct('PleiadesEntity')
 
 @onsetup
@@ -27,12 +29,12 @@ def setup_pleiades_policy():
     # the ZCML.
     
     ztc.installPackage('pleiades.policy')
-    ztc.installPackage('pleiades.vocabulary')
+    ztc.installPackage('pleiades.vocabularies')
     ztc.installPackage('pleiades.theme')
     ztc.installPackage('pleiades.workspace')
     ztc.installPackage('zgeo.plone.geographer')
     ztc.installPackage('zgeo.plone.kml')
-    ztc.installPackage('pleiades.kml')
+    #ztc.installPackage('pleiades.kml')
 
     
 # The order here is important: We first call the (deferred) function which
@@ -41,7 +43,7 @@ def setup_pleiades_policy():
 
 setup_pleiades_policy()
 ptc.setupPloneSite(
-    products=['ATVocabularyManager', 'PleiadesEntity', 'pleiades.policy']
+    products=['ATVocabularyManager', 'Products.CompoundField', 'Products.ATBackRef', 'PleiadesEntity', 'pleiades.policy']
     )
 
 class PleiadesPolicyTestCase(ptc.PloneTestCase):

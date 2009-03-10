@@ -38,9 +38,7 @@
    <element value="TempFolder"/>
    <element value="VocabularyLibrary"/>
    <element value="Place"/>
-   <element value="PlacefulAssociation"/>
-   <element value="Name"/>
-   <element value="Location"/>
+   <element value="Feature"/>
   </property>
   <property name="enable_wf_state_filtering" type="boolean">False</property>
   <property name="wf_states_to_show" type="lines"/>
@@ -60,13 +58,11 @@
    <element value="PlaceContainer"/>
    <element value="Name"/>
    <element value="VdexTerm"/>
-   <element value="PlacefulAssociation"/>
+   <element value="Feature"/>
    <element value="TreeVocabulary"/>
    <element value="VdexVocabulary"/>
    <element value="VdexMediaDescriptor"/>
    <element value="Place"/>
-   <element value="Location"/>
-   <element value="LocationContainer"/>
    <element value="VocabularyLibrary"/>
    <element value="SimpleVocabulary"/>
   </property>
@@ -99,14 +95,12 @@
    <element value="SortedSimpleVocabulary"/>
    <element value="Name"/>
    <element value="VdexTerm"/>
-   <element value="PlacefulAssociation"/>
+   <element value="Feature"/>
    <element value="TreeVocabulary"/>
    <element value="VdexVocabulary"/>
    <element value="VocabularyLibrary"/>
    <element value="VdexMediaDescriptor"/>
    <element value="PlaceContainer"/>
-   <element value="Location"/>
-   <element value="LocationContainer"/>
    <element value="Place"/>
    <element value="Folder"/>
    <element value="SimpleVocabulary"/>

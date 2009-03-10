@@ -6,17 +6,16 @@ from Products.CMFCore.utils import getToolByName
 
 
 class TestSmartFolderCreation(PleiadesPolicyTestCase):
-
+    
     def afterSetUp(self):
         self.places = self.portal['places']
         self.features = self.portal['features']
-        self.names = self.portal['names']
         self.request = TestRequest()
-
+    
     def test_create_collections(self):
         self.setRoles(('Manager',))
         view = getMultiAdapter(
-                (self.places, self.request), 
+                (self.places, self.request),
                 name=u'create-collections'
                 )
         self.assert_(view() == 1)
@@ -30,40 +29,40 @@ class TestSmartFolderCreation(PleiadesPolicyTestCase):
         topic = self.places['settlement']
         c1 = topic['crit__getFeatureType_ATSimpleStringCriterion']
         self.assertEqual(u'settlement', c1.value)
-
-        nid = self.names.invokeFactory(
-                'Name',
-                nameTransliterated='Foo'
-                )
-        name = self.names[nid]
-        tid = name.invokeFactory(
-                'TemporalAttestation',
-                id='roman',
-                timePeriod='roman',
-                attestationConfidence='certain',
-                )
-        name.reindexObject()
-
+        
         fid = self.features.invokeFactory(
                 'Feature',
+                'feature',
                 title='A Feature',
                 featureType='settlement',
                 )
         feature = self.features[fid]
-        feature.addReference(name, 'hasName')
-        feature.reindexObject()
-
+        
+        nid = feature.invokeFactory(
+                'Name',
+                'foo',
+                nameTransliterated='Foo'
+                )
+        name = feature[nid]
+        attestations = name.Schema()['attestations']
+        name.update(attestations=[dict(confidence='certain', timePeriod='roman')])
+        name.reindexObject()
+        
         pid = self.places.invokeFactory(
                 'Place',
+                '0',
                 title='A Place',
                 )
         place = self.places[pid]
-        place.addReference(feature, 'hasFeature')
-        place.reindexObject()
 
+        
+        feature.addReference(place, 'feature_place')
+        feature.reindexObject()
+        place.reindexObject()
+                
         self.assertEquals(['settlement'], place.getFeatureType())
         self.assertEquals(['roman'], place.getTimePeriods())
-
+        
         self.assertEquals([place.UID()], [b.UID for b in self.places['settlement'].queryCatalog()])
         self.assertEquals([place.UID()], [b.UID for b in self.places['roman'].queryCatalog()])
 

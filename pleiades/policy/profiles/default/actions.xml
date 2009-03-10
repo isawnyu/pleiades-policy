@@ -12,10 +12,6 @@
      condition_expr="" url_expr="string:$portal_url/features" visible="True">
    <permission>View</permission>
   </action>
-  <action title="Names" action_id="names" category="portal_tabs"
-     condition_expr="" url_expr="string:$portal_url/names" visible="True">
-   <permission>View</permission>
-  </action>
   <action title="Vocabulary" action_id="vocabulary" category="portal_tabs"
      condition_expr="" url_expr="string:$portal_url/vocabulary" visible="True">
    <permission>View</permission>
