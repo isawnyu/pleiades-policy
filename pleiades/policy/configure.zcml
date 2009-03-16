@@ -15,6 +15,7 @@
   <include package="pleiades.kml"/>
   <include package="pleiades.atom"/>
   <include package="pleiades.openlayers"/>
+  <include package="pleiades.json"/>
 
   <five:registerPackage package="." initialize=".initialize" />
 
