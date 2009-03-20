@@ -24,9 +24,15 @@ setup(name='pleiades.policy',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          'setuptools',
-          # -*- Extra requirements: -*-
-      ],
+          'setuptools', 
+          'pleiades.workspace',
+          'pleiades.theme',
+          'pleiades.vocabularies',
+          'pleiades.atom',
+          'pleiades.json',
+          'pleiades.kml',
+          'pleiades.openlayers'      
+          ],
       entry_points="""
       # -*- Entry points: -*-
       """,
