@@ -2,14 +2,11 @@ import transaction
 from Products.CMFCore.utils import getToolByName
 
 PRODUCT_DEPENDENCIES = (
-    'ATVocabularyManager',
-    'ATBackRef',
     'PleiadesEntity',
     'zgeo.plone.geographer',
     'zgeo.plone.kml',
     'zgeo.plone.atom',
     'pleiades.workspace',
-    'pleiades.vocabularies',
     'pleiades.theme',
     'pleiades.kml',
     'pleiades.atom'
