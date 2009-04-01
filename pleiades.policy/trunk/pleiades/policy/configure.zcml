@@ -16,6 +16,7 @@
   <include package="pleiades.atom"/>
   <include package="pleiades.openlayers"/>
   <include package="pleiades.json"/>
+  <include package="pleiades.portlet.references"/>
 
   <five:registerPackage package="." initialize=".initialize" />
 
