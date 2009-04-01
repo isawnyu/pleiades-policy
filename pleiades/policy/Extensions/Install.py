@@ -9,7 +9,8 @@ PRODUCT_DEPENDENCIES = (
     'pleiades.workspace',
     'pleiades.theme',
     'pleiades.kml',
-    'pleiades.atom'
+    'pleiades.atom',
+    'pleiades.portlet.references'
     )
                         
 EXTENSION_PROFILES = ('pleiades.policy:default',)
