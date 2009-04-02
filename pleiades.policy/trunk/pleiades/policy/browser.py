@@ -96,7 +96,7 @@ class CreateCollections(BrowserView):
                 c = subtopic.addCriterion(
                         'getTimePeriods', 'ATSimpleStringCriterion'
                         )
-                c.setValue(vi)
+                c.setValue(ki)
                 topic.setSortCriterion('sortable_title', reversed=False)
         
         return 1
