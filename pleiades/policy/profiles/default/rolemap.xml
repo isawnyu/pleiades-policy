@@ -16,16 +16,6 @@
       <role name="Owner"/>
       <role name="Contributor"/>
     </permission>
-    <permission name="PleiadesEntity: Add SecondaryReference" acquire="True">
-      <role name="Manager"/>
-      <role name="Owner"/>
-      <role name="Contributor"/>
-    </permission>
-    <permission name="PleiadesEntity: Add PrimaryReference" acquire="True">
-      <role name="Manager"/>
-      <role name="Owner"/>
-      <role name="Contributor"/>
-    </permission>
     <permission name="PleiadesEntity: Add Feature" acquire="True">
       <role name="Manager"/>
       <role name="Owner"/>
