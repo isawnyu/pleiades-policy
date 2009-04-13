@@ -45,6 +45,7 @@ class TestSmartFolderCreation(PleiadesPolicyTestCase):
                 )
         name = feature[nid]
         attestations = name.Schema()['attestations']
+        attestations.resize(1)
         name.update(attestations=[dict(confidence='certain', timePeriod='roman')])
         name.reindexObject()
         
