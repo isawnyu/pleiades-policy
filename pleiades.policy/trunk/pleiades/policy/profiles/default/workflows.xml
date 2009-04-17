@@ -7,6 +7,8 @@
   </default>
   <type type_id="File" remove="remove" />
   <type type_id="Image" remove="remove" />
+  <type type_id="SimpleVocabulary" remove="remove" />
+  <type type_id="SimpleVocabularyTerm" remove="remove" />
   <type type_id="Plone Site" />
  </bindings>
 </object>
