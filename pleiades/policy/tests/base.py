@@ -30,7 +30,6 @@ def setup_pleiades_policy():
     
     ztc.installPackage('pleiades.policy')
     ztc.installPackage('pleiades.vocabularies')
-    ztc.installPackage('pleiades.theme')
     ztc.installPackage('pleiades.workspace')
     ztc.installPackage('zgeo.plone.geographer')
     ztc.installPackage('zgeo.plone.kml')

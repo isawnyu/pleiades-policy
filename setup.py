@@ -26,7 +26,6 @@ setup(name='pleiades.policy',
       install_requires=[
           'setuptools', 
           'pleiades.workspace',
-          'pleiades.theme',
           'pleiades.vocabularies',
           'pleiades.atom',
           'pleiades.json',
