@@ -7,7 +7,6 @@ PRODUCT_DEPENDENCIES = (
     'zgeo.plone.kml',
     'zgeo.plone.atom',
     'pleiades.workspace',
-    'pleiades.theme',
     'pleiades.kml',
     'pleiades.atom',
     'pleiades.portlet.references'
