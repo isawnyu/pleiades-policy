@@ -41,13 +41,6 @@ class TestSetup(PleiadesPolicyTestCase):
     def test_vocabulary_setup(self):
         self.failUnless('vocabularies' in self.portal.keys())
 
-    def test_theme_setup(self):
-        skins = getToolByName(self.portal, 'portal_skins')
-        layer = skins.getSkinPath('Pleiades Theme')
-        self.failUnless('pleiades_theme_custom_images' in layer)
-        self.failUnless('pleiades_theme_custom_templates' in layer)
-        self.failUnless('pleiades_theme_styles' in layer)
-
 def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(TestSetup))
