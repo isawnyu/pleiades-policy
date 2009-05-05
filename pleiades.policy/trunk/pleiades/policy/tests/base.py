@@ -28,11 +28,11 @@ def setup_pleiades_policy():
     # should be available. This can't happen until after we have loaded
     # the ZCML.
     
-    ztc.installPackage('pleiades.policy')
     ztc.installPackage('pleiades.vocabularies')
     ztc.installPackage('pleiades.workspace')
     ztc.installPackage('zgeo.plone.geographer')
     ztc.installPackage('zgeo.plone.kml')
+    ztc.installPackage('pleiades.policy')
     #ztc.installPackage('pleiades.kml')
 
     
@@ -49,3 +49,23 @@ class PleiadesPolicyTestCase(ptc.PloneTestCase):
     """We use this base class for all the tests in this package. If necessary,
     we can put common utility or setup code in here.
     """
+
+class PleiadesPolicyWorkflowTestCase(ptc.PloneTestCase):
+    """We use this base class for all the tests in this package. If necessary,
+    we can put common utility or setup code in here.
+    """
+
+    def afterSetUp(self):
+        self.catalog = self.portal.portal_catalog
+        self.workflow = self.portal.portal_workflow
+        
+        self.workflow.setChainForPortalTypes(['Place', 'PlaceContainer', 'Name'], 'pleiades_entity_workflow')
+
+        self.portal.acl_users._doAddUser('member', 'secret', ['Member'], [])
+        self.portal.acl_users._doAddUser('manager', 'secret', ['Manager'], [])
+        self.portal.acl_users._doAddUser('editor' , ' secret', ['Editor'],[])
+        self.portal.acl_users._doAddUser('reviewer', 'secret', ['Reviewer'], [])
+        self.portal.acl_users._doAddUser('reader', 'secret', ['Reader'], [])
+        self.portal.acl_users._doAddUser('contributor', 'secret', ['Contributor'], [])
+
+        

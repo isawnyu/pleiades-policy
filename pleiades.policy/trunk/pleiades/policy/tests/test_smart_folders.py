@@ -34,7 +34,7 @@ class TestSmartFolderCreation(PleiadesPolicyTestCase):
                 'Feature',
                 'feature',
                 title='A Feature',
-                featureType='settlement',
+                featureType=['settlement'],
                 )
         feature = self.features[fid]
         
@@ -53,6 +53,7 @@ class TestSmartFolderCreation(PleiadesPolicyTestCase):
                 'Place',
                 '0',
                 title='A Place',
+                placeType=['settlement'],
                 )
         place = self.places[pid]
 
