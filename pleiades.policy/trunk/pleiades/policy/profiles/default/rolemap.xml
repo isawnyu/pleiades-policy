@@ -16,7 +16,6 @@
     </permission>
     <permission name="PleiadesEntity: Add Location" acquire="True">
       <role name="Manager"/>
-      <role name="Owner"/>
       <role name="Contributor"/>
     </permission>
     <permission name="PleiadesEntity: Add Feature" acquire="True">
