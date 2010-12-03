@@ -7,6 +7,7 @@
   >
 
   <include package="zgeo.plone.geographer"/>
+  <include package="pleiades.geographer"/>
   <include package="zgeo.plone.kml"/>
   <include package="zgeo.plone.atom"/>
   <include package="pleiades.workspace"/>
@@ -17,11 +18,19 @@
   <include package="pleiades.openlayers"/>
   <include package="pleiades.json"/>
   <include package="pleiades.portlet.references"/>
+  <include package="pleiades.sitemap"/>
+  <include package="pleiades.portlet.references"/>
+  <include package="pleiades.notredame"/>
+  <include package="pleiades.placematch"/>
+  <include package="pleiades.vaytrouindex"/>
+  <include package="pleiades.neighbors"/>
+  <include package="archetypes.referencebrowserwidget"/>
+  <include package="pleiades.reconciliation"/>
 
   <five:registerPackage package="." initialize=".initialize" />
 
   <browser:page
-    for="Products.PleiadesEntity.content.interfaces.IPlaceContainer"
+    for="Products.ATContentTypes.interface.folder.IATFolder"
     name="create-collections"
     class=".browser.CreateCollections"
     permission="cmf.ModifyPortalContent"
