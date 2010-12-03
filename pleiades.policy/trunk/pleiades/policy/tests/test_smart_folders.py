@@ -10,44 +10,32 @@ class TestSmartFolderCreation(PleiadesPolicyTestCase):
     def afterSetUp(self):
         self.places = self.portal['places']
         self.features = self.portal['features']
+        self.setRoles(('Manager',))
+        cid = self.portal.invokeFactory(
+                'Folder',
+                'collections',
+                title='Collections',
+                )
+        self.collections = self.portal['collections']
         self.request = TestRequest()
     
     def test_create_collections(self):
         self.setRoles(('Manager',))
         view = getMultiAdapter(
-                (self.places, self.request),
+                (self.collections, self.request),
                 name=u'create-collections'
                 )
         self.assert_(view() == 1)
-        self.assert_('roman' in self.places)
-        self.assert_('settlement' in self.places)
+        self.assert_('roman' in self.collections)
+        self.assert_('settlement' in self.collections)
         
-        topic = self.places['roman']
+        topic = self.collections['roman']
         c1 = topic['crit__getTimePeriods_ATSimpleStringCriterion']
         self.assertEqual(u'roman', c1.value)
         
-        topic = self.places['settlement']
+        topic = self.collections['settlement']
         c1 = topic['crit__getFeatureType_ATSimpleStringCriterion']
         self.assertEqual(u'settlement', c1.value)
-        
-        fid = self.features.invokeFactory(
-                'Feature',
-                'feature',
-                title='A Feature',
-                featureType=['settlement'],
-                )
-        feature = self.features[fid]
-        
-        nid = feature.invokeFactory(
-                'Name',
-                'foo',
-                nameTransliterated='Foo'
-                )
-        name = feature[nid]
-        attestations = name.Schema()['attestations']
-        attestations.resize(1)
-        name.update(attestations=[dict(confidence='certain', timePeriod='roman')])
-        name.reindexObject()
         
         pid = self.places.invokeFactory(
                 'Place',
@@ -56,17 +44,22 @@ class TestSmartFolderCreation(PleiadesPolicyTestCase):
                 placeType=['settlement'],
                 )
         place = self.places[pid]
-
-        
-        feature.addReference(place, 'feature_place')
-        feature.reindexObject()
+        nid = place.invokeFactory(
+                'Name',
+                'foo',
+                nameTransliterated='Foo'
+                )
+        name = place[nid]
+        attestations = name.Schema()['attestations']
+        attestations.resize(1)
+        name.update(attestations=[dict(confidence='certain', timePeriod='roman')])
         place.reindexObject()
                 
         self.assertEquals(['settlement'], place.getFeatureType())
         self.assertEquals(['roman'], place.getTimePeriods())
         
-        self.assertEquals([place.UID()], [b.UID for b in self.places['settlement'].queryCatalog()])
-        self.assertEquals([place.UID()], [b.UID for b in self.places['roman'].queryCatalog()])
+        self.assertEquals([place.UID()], [b.UID for b in self.collections['settlement'].queryCatalog()])
+        self.assertEquals([place.UID()], [b.UID for b in self.collections['roman'].queryCatalog()])
 
 
 def test_suite():

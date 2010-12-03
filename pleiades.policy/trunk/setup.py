@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '0.2'
+version = '0.3'
 
 setup(name='pleiades.policy',
       version=version,
@@ -16,7 +16,7 @@ setup(name='pleiades.policy',
         ],
       keywords='',
       author='Sean Gillies',
-      author_email='sgillies@frii.com',
+      author_email='sean.gillies@gmail.com',
       url='http://atlantides.org/trac/pleiades/wiki/PleiadesPolicy',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
@@ -24,13 +24,22 @@ setup(name='pleiades.policy',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          'setuptools', 
           'pleiades.workspace',
           'pleiades.vocabularies',
+          'pleiades.geographer',
           'pleiades.atom',
           'pleiades.json',
           'pleiades.kml',
-          'pleiades.openlayers'      
+          'pleiades.openlayers',
+          'pleiades.portlet.references',
+          'pleiades.notredame',
+          'pleiades.sitemap',
+          'pleiades.placematch',
+          'pleiades.vaytrouindex',
+          'pleiades.neighbors',
+          'archetypes.referencebrowserwidget',
+          'pleiades.reconciliation'
+          
           ],
       entry_points="""
       # -*- Entry points: -*-
