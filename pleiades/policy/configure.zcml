@@ -20,6 +20,7 @@
   <include package="pleiades.portlet.references"/>
   <include package="pleiades.sitemap"/>
   <include package="pleiades.portlet.references"/>
+  <include package="plonetheme.notredame"/>
   <include package="pleiades.notredame"/>
   <include package="pleiades.placematch"/>
   <include package="pleiades.vaytrouindex"/>
