@@ -39,6 +39,7 @@ setup(name='pleiades.policy',
           'pleiades.neighbors',
           'archetypes.referencebrowserwidget',
           'pleiades.reconciliation',
+          'Products.PleiadesEntity',
           ],
       extras_require={
           'test': ['Products.PloneTestCase'],
