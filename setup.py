@@ -38,9 +38,11 @@ setup(name='pleiades.policy',
           'pleiades.vaytrouindex',
           'pleiades.neighbors',
           'archetypes.referencebrowserwidget',
-          'pleiades.reconciliation'
-          
+          'pleiades.reconciliation',
           ],
+      extras_require={
+          'test': ['Products.PloneTestCase'],
+      },
       entry_points="""
       # -*- Entry points: -*-
       """,
