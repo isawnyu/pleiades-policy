@@ -8,7 +8,6 @@
 
   <include package="pleiades.geographer"/>
   <include package="pleiades.workspace"/>
-  <include package="pleiades.theme"/>
   <include package="pleiades.vocabularies"/>
   <include package="pleiades.kml"/>
   <include package="pleiades.atom"/>
@@ -17,7 +16,6 @@
   <include package="pleiades.portlet.references"/>
   <include package="pleiades.sitemap"/>
   <include package="pleiades.portlet.references"/>
-  <include package="plonetheme.notredame"/>
   <include package="pleiades.notredame"/>
   <include package="pleiades.placematch"/>
   <include package="pleiades.vaytrouindex"/>

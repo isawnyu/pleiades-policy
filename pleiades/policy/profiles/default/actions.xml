@@ -26,10 +26,10 @@
   <object name="rss" meta_type="CMF Action" i18n:domain="plone">
    <property name="title" i18n:translate="">RSS feed</property>
    <property name="description" i18n:translate=""></property>
-   <property name="url_expr">string:$object_url/RSS</property>
+   <property name="url_expr">object/@@syndication-util/rss_url</property>
    <property name="icon_expr"></property>
    <property
-      name="available_expr">python:portal.portal_syndication.isSyndicationAllowed(object)</property>
+      name="available_expr">object/@@syndication-util/context_enabled</property>
    <property name="permissions">
     <element value="View"/>
    </property>
@@ -56,30 +56,6 @@
     <element value="View"/>
    </property>
    <property name="visible">True</property>
-  </object>
-  <object name="addtofavorites" meta_type="CMF Action" i18n:domain="plone">
-   <property name="title" i18n:translate="">Add to favorites</property>
-   <property name="description" i18n:translate=""></property>
-   <property name="url_expr">string:${object_url}/addtoFavorites</property>
-   <property name="icon_expr"></property>
-   <property
-      name="available_expr">python:(member is not None) and (portal.portal_membership.getHomeFolder() is not None)</property>
-   <property name="permissions">
-    <element value="View"/>
-   </property>
-   <property name="visible">False</property>
-  </object>
-  <object name="full_screen" meta_type="CMF Action" i18n:domain="plone">
-   <property name="title" i18n:translate="">Toggle full screen mode</property>
-   <property name="description" i18n:translate=""></property>
-   <property
-      name="url_expr">string:javascript:toggleFullScreenMode();</property>
-   <property name="icon_expr"></property>
-   <property name="available_expr">python:member is not None</property>
-   <property name="permissions">
-    <element value="View"/>
-   </property>
-   <property name="visible">False</property>
   </object>
   <object name="extedit" meta_type="CMF Action" i18n:domain="plone">
    <property name="title"
@@ -231,10 +207,10 @@
   <object name="syndication" meta_type="CMF Action" i18n:domain="plone">
    <property name="title" i18n:translate="">Syndication</property>
    <property name="description" i18n:translate=""></property>
-   <property name="url_expr">string:${folder_url}/synPropertiesForm</property>
+   <property name="url_expr">string:${object_url}/synPropertiesForm</property>
    <property name="icon_expr"></property>
    <property
-      name="available_expr">python:folder is object and portal.portal_syndication.isSiteSyndicationAllowed()</property>
+      name="available_expr">object/@@syndication-util/context_allowed</property>
    <property name="permissions">
     <element value="Manage properties"/>
    </property>
@@ -261,19 +237,6 @@
    <property name="available_expr"></property>
    <property name="permissions">
     <element value="Sharing page: Delegate roles"/>
-   </property>
-   <property name="visible">True</property>
-  </object>
-  <object name="history" meta_type="CMF Action" i18n:domain="cmfeditions">
-   <property name="title" i18n:translate="">History</property>
-   <property name="description" i18n:translate=""></property>
-   <property
-      name="url_expr">string:${object_url}/versions_history_form</property>
-   <property name="icon_expr"></property>
-   <property
-      name="available_expr">python:portal.portal_repository.isVersionable(object)</property>
-   <property name="permissions">
-    <element value="Modify portal content"/>
    </property>
    <property name="visible">True</property>
   </object>
@@ -379,7 +342,7 @@
    <property name="title" i18n:translate="">Preferences</property>
    <property name="description" i18n:translate=""></property>
    <property
-      name="url_expr">string:${portal_url}/plone_memberprefs_panel</property>
+      name="url_expr">string:${globals_view/navigationRootUrl}/@@personal-preferences</property>
    <property name="icon_expr"></property>
    <property name="available_expr">python:member is not None</property>
    <property name="permissions">
@@ -401,7 +364,7 @@
   <object name="join" meta_type="CMF Action" i18n:domain="plone">
    <property name="title" i18n:translate="">Register</property>
    <property name="description" i18n:translate=""></property>
-   <property name="url_expr">string:${portal_url}/join_form</property>
+   <property name="url_expr">string:${globals_view/navigationRootUrl}/@@register</property>
    <property name="icon_expr"></property>
    <property name="available_expr">python:member is None</property>
    <property name="permissions">
@@ -430,31 +393,6 @@
     <element value="View"/>
    </property>
    <property name="visible">True</property>
-  </object>
-  <object name="addFavorite" meta_type="CMF Action" i18n:domain="plone">
-   <property name="title" i18n:translate="">Add to favorites</property>
-   <property name="description" i18n:translate=""></property>
-   <property name="url_expr">string:${object_url}/addtoFavorites</property>
-   <property name="icon_expr"></property>
-   <property
-      name="available_expr">python: portal.portal_membership.getHomeFolder() is not None</property>
-   <property name="permissions">
-    <element value="View"/>
-   </property>
-   <property name="visible">False</property>
-  </object>
-  <object name="favorites" meta_type="CMF Action" i18n:domain="plone">
-   <property name="title" i18n:translate="">My favorites</property>
-   <property name="description" i18n:translate=""></property>
-   <property
-      name="url_expr">string:${portal/portal_membership/getHomeUrl}/Favorites/folder_contents</property>
-   <property name="icon_expr"></property>
-   <property
-      name="available_expr">python:(member is not None) and hasattr(portal.portal_membership.getHomeFolder(), "Favorites")</property>
-   <property name="permissions">
-    <element value="View"/>
-   </property>
-   <property name="visible">False</property>
   </object>
  </object>
 </object>
