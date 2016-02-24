@@ -22,6 +22,7 @@
   <include package="pleiades.neighbors"/>
   <include package="archetypes.referencebrowserwidget"/>
   <include package="pleiades.reconciliation"/>
+  <include package="pleiades.iterate" />
 
   <five:registerPackage package="." initialize=".initialize" />
 
