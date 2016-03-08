@@ -110,7 +110,7 @@
    <property name="title" i18n:translate="">Site Setup</property>
    <property name="description" i18n:translate=""></property>
    <property
-      name="url_expr">string:${portal_url}/plone_control_panel</property>
+      name="url_expr">string:${portal_url}/@@overview-controlpanel</property>
    <property name="icon_expr"></property>
    <property name="available_expr"></property>
    <property name="permissions">
@@ -394,5 +394,8 @@
    </property>
    <property name="visible">True</property>
   </object>
+ </object>
+ <object name="plone_setup">
+  <property name="visible">False</property>
  </object>
 </object>
