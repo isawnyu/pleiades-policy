@@ -1,0 +1,10 @@
+<registry>
+  <record name="plone.cachepurging.interfaces.ICachePurgingSettings.cachingProxies">
+    <value>
+      <element>http://localhost:80</element>
+    </value>
+  </record>
+  <record name="plone.caching.interfaces.ICacheSettings.enabled">
+    <value>True</value>
+  </record>
+</registry>

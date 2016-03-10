@@ -1,15 +1,13 @@
 from Products.CMFCore.utils import getToolByName
 
-def importVarious(context):
-    """Miscellanous steps import handle
-    """
-    
-    # Ordinarily, GenericSetup handlers check for the existence of XML files.
-    # Here, we are not parsing an XML file, but we use this text file as a 
-    # flag to check that we actually meant for this import step to be run.
-    # The file is found in profiles/default.
-    
-    if context.readDataFile('pleiades.policy_various.txt') is None:
-        return
-    
-    #portal = context.getSite()
+
+def install_caching(context):
+    qi = getToolByName(context, 'portal_quickinstaller')
+    if not qi.isProductInstalled('plone.app.caching'):
+        qi.installProduct('plone.app.caching')
+        portal_setup = getToolByName(context, 'portal_setup')
+        portal_setup.runAllImportStepsFromProfile(
+            'profile-plone.app.caching:with-caching-proxy', purge_old=False)
+        portal_setup.runImportStepFromProfile(
+            'profile-pleiades.policy:default', 'plone.app.registry',
+            run_dependencies=False, purge_old=False)

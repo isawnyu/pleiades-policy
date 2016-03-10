@@ -1,0 +1,21 @@
+<configure
+  xmlns="http://namespaces.zope.org/genericsetup">
+
+  <registerProfile
+    name="default"
+    title="Pleiades Site Policy"
+    directory="profiles/default"
+    description="Turn a Plone site into the Pleiades site."
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+
+  <upgradeStep
+    profile="pleiades.policy:default"
+    source="*"
+    destination="1"
+    title="Install plone.app.caching"
+    description=""
+    handler=".setuphandlers.install_caching"
+    />
+
+</configure>
