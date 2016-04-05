@@ -395,7 +395,7 @@
    <property name="visible">True</property>
   </object>
  </object>
- <object name="plone_setup">
+ <object name="plone_setup" meta_type="CMF Action">
   <property name="visible">False</property>
  </object>
 </object>
