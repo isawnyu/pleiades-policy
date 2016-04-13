@@ -18,4 +18,24 @@
     handler=".setuphandlers.install_caching"
     />
 
+  <upgradeDepends
+    sortkey="10"
+    source="1"
+    destination="2"
+    title="Remove Workflows"
+    description=""
+    profile="pleiades.policy:default"
+    import_steps="workflow"
+    />
+
+  <upgradeDepends
+    sortkey="10"
+    source="2"
+    destination="3"
+    title="Remove old control panel actions"
+    description=""
+    profile="pleiades.policy:default"
+    import_steps="controlpanel"
+    />
+
 </configure>

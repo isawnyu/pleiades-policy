@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <object name="portal_workflow" meta_type="Plone Workflow Tool">
  <object name="pleiades_entity_workflow" meta_type="Workflow"/>
+ <object name="intranet_workflow" meta_type="Workflow" remove="true"/>
+ <object name="intranet_folder_workflow" meta_type="Workflow" remove="true"/>
+ <object name="plone_workflow" meta_type="Workflow" remove="true"/>
+ <object name="folder_workflow" meta_type="Workflow" remove="true"/>
  <bindings>
   <default>
    <bound-workflow workflow_id="pleiades_entity_workflow"/>
