@@ -7,4 +7,41 @@
   <record name="plone.caching.interfaces.ICacheSettings.enabled">
     <value>True</value>
   </record>
+  <record name="plone.app.caching.weakCaching.plone.content.itemView.etags">
+      <field ref="plone.app.caching.weakCaching.etags" />
+      <value>
+          <element>userid</element>
+          <element>accept</element>
+          <element>catalogCounter</element>
+          <element>userLanguage</element>
+          <element>gzip</element>
+          <element>skin</element>
+          <element>locked</element>
+          <element>resourceRegistries</element>
+      </value>
+  </record>
+  <record name="plone.app.caching.weakCaching.plone.content.itemView.etags">
+      <field ref="plone.app.caching.weakCaching.etags" />
+      <value>
+          <element>userid</element>
+          <element>accept</element>
+          <element>catalogCounter</element>
+          <element>userLanguage</element>
+          <element>gzip</element>
+          <element>skin</element>
+          <element>locked</element>
+          <element>resourceRegistries</element>
+      </value>
+  </record>
+  <record name="plone.app.caching.moderateCaching.plone.content.feed.etags">
+      <field ref="plone.app.caching.moderateCaching.etags" />
+      <value>
+          <element>userid</element>
+          <element>accept</element>
+          <element>catalogCounter</element>
+          <element>userLanguage</element>
+          <element>gzip</element>
+          <element>skin</element>
+      </value>
+  </record>
 </registry>

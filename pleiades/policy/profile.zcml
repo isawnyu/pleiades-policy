@@ -38,4 +38,14 @@
     import_steps="controlpanel"
     />
 
+  <upgradeDepends
+    sortkey="10"
+    source="0003"
+    destination="0004"
+    title="Update caching settings"
+    description=""
+    profile="pleiades.policy:default"
+    import_steps="plone.app.registry"
+    />
+
 </configure>

@@ -35,4 +35,6 @@
 
   <include file="profile.zcml" />
 
+  <adapter factory=".caching.Accept" name="accept" />
+
 </configure>
