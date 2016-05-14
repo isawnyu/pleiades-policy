@@ -1,5 +1,6 @@
 from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
+from pleiades.vocabularies.vocabularies import get_vocabulary
 
 
 class CreateCollections(BrowserView):
@@ -38,9 +39,9 @@ class CreateCollections(BrowserView):
         except:
             pass
 
-        vocab_time = vtool.getVocabularyByName('time-periods')
+        vocab_time = get_vocabulary('time_periods')
         vocab_type = vtool.getVocabularyByName('place-types')
-        v_times = dict(vocab_time.getDisplayList(self).items())
+        v_times = dict([(t['id'], t['title']) for t in vocab_time])
         v_types = dict(vocab_type.getDisplayList(self).items())
 
         # [time]/[type]
