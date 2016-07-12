@@ -48,4 +48,14 @@
     import_steps="plone.app.registry"
     />
 
+  <upgradeDepends
+    sortkey="10"
+    source="0004"
+    destination="0005"
+    title="Update default workflow"
+    description=""
+    profile="pleiades.policy:default"
+    import_steps="workflow"
+    />
+
 </configure>

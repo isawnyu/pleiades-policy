@@ -13,6 +13,9 @@
  <permission>Change portal events</permission>
  <permission>Modify portal content</permission>
  <permission>View</permission>
+ <permission>iterate : Check out content</permission>
+ <permission>CMFEditions: Save new version</permission>
+ <permission>Delete objects</permission>
 
  <state state_id="drafting" title="Drafting" i18n:attributes="title">
   <description i18n:translate="">
@@ -26,6 +29,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>Contributor</permission-role>
+   <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Change portal events"
                   acquired="False">
@@ -33,6 +37,7 @@
    <permission-role>Owner</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
+   <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="List folder contents"
                   acquired="False">
@@ -41,12 +46,14 @@
    <permission-role>Editor</permission-role>
    <!--permission-role>Reader</permission-role-->
    <permission-role>Contributor</permission-role>
+   <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Modify portal content"
                   acquired="False">
    <permission-role>Manager</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Editor</permission-role>
+   <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
    <permission-role>Manager</permission-role>
@@ -54,6 +61,19 @@
    <permission-role>Editor</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>Contributor</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="CMFEditions: Save new version"
+                  acquired="True">
+  </permission-map>
+  <permission-map name="iterate : Check out content"
+                  acquired="False">
+  </permission-map>
+  <permission-map name="Delete objects"
+                  acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
  <state state_id="pending" title="Pending review" i18n:attributes="title">
@@ -71,12 +91,14 @@
    <permission-role>Editor</permission-role>
    <!--permission-role>Reader</permission-role-->
    <permission-role>Contributor</permission-role>
+   <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Change portal events"
                   acquired="False">
    <permission-role>Manager</permission-role>
    <permission-role>Reviewer</permission-role>
    <permission-role>Editor</permission-role>
+   <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="List folder contents"
                   acquired="False">
@@ -86,12 +108,14 @@
    <!--permission-role>Reader</permission-role-->
    <permission-role>Contributor</permission-role>
    <permission-role>Reviewer</permission-role>
+   <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Modify portal content"
                   acquired="False">
    <permission-role>Manager</permission-role>
    <permission-role>Reviewer</permission-role>
    <permission-role>Editor</permission-role>
+   <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
    <permission-role>Manager</permission-role>
@@ -100,6 +124,19 @@
    <permission-role>Reader</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Reviewer</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="CMFEditions: Save new version"
+                  acquired="True">
+  </permission-map>
+  <permission-map name="iterate : Check out content"
+                  acquired="False">
+  </permission-map>
+  <permission-map name="Delete objects"
+                  acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
  <state state_id="published" title="Published" i18n:attributes="title">
@@ -114,12 +151,14 @@
    <permission-role>Reviewer</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
+   <permission-role>Site Administrator</permission-role>
    <!--permission-role>Anonymous</permission-role-->
   </permission-map>
   <permission-map name="Change portal events"
                   acquired="False">
    <permission-role>Manager</permission-role>
    <permission-role>Editor</permission-role>
+   <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="List folder contents"
                   acquired="False">
@@ -129,14 +168,30 @@
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <!--permission-role>Anonymous</permission-role-->
+   <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Modify portal content"
                   acquired="False">
    <permission-role>Manager</permission-role>
    <permission-role>Editor</permission-role>
+   <permission-role>Site Administrator</permission-role>
   </permission-map>
-  <permission-map name="View" acquired="False">
+  <permission-map name="View" acquired="True">
    <permission-role>Anonymous</permission-role>
+  </permission-map>
+  <permission-map name="CMFEditions: Save new version"
+                  acquired="True">
+   <permission-role>Member</permission-role>
+  </permission-map>
+  <permission-map name="iterate : Check out content"
+                  acquired="True">
+   <permission-role>Member</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects"
+                  acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
 
