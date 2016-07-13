@@ -60,6 +60,8 @@ def update_rolemap(context):
                     if changed is None:
                         # Re-ghostify.
                         v._p_deactivate()
+                    transaction.commit()
+                    p_jar.cacheMinimize()
         return count
 
     count = update_mappings(site)
