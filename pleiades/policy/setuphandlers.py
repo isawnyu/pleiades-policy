@@ -3,7 +3,7 @@ import transaction
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.log import log
 
-SP_LIMIT = 100
+COMMIT_LIMIT = 50
 
 
 def install_caching(context):
@@ -25,6 +25,7 @@ def update_rolemap(context):
             return
     else:
         site = context
+    p_jar = site._p_jar
     wft = getToolByName(site, 'portal_workflow')
     wfs = {}
     for id in wft.objectIds():
@@ -45,9 +46,10 @@ def update_rolemap(context):
                         changed = 1
             if changed:
                 count = count + 1
-                if count % SP_LIMIT == 0:
+                if count % COMMIT_LIMIT == 0:
                     transaction.savepoint(optimistic=True)
                     log('Updated %d items' % count)
+                    p_jar.cacheMinimize()
 
         if hasattr(aq_base(ob), 'objectItems'):
             obs = ob.objectItems()
