@@ -58,4 +58,14 @@
     import_steps="workflow"
     />
 
+  <upgradeDepends
+    sortkey="10"
+    source="0005"
+    destination="0006"
+    title="Update default workflow"
+    description=""
+    profile="pleiades.policy:default"
+    import_steps="rolemap workflow"
+    />
+
 </configure>

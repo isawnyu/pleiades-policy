@@ -1,4 +1,5 @@
 from Acquisition import aq_base
+import logging
 import transaction
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.log import log
@@ -26,6 +27,8 @@ def update_rolemap(context):
     else:
         site = context
     p_jar = site._p_jar
+    log('Updating workflow mapping for %s' % site.absolute_url(1),
+        severity=logging.WARNING)
     wft = getToolByName(site, 'portal_workflow')
     wfs = {}
     for id in wft.objectIds():
@@ -33,8 +36,7 @@ def update_rolemap(context):
         if hasattr(aq_base(wf), 'updateRoleMappingsFor'):
             wfs[id] = wf
 
-    def update_mappings(ob):
-        count = 0
+    def update_mappings(ob, count, last_count):
         wf_ids = wft.getChainFor(ob)
         if wf_ids:
             changed = 0
@@ -48,7 +50,8 @@ def update_rolemap(context):
                 count = count + 1
                 if count % COMMIT_LIMIT == 0:
                     transaction.savepoint(optimistic=True)
-                    log('Updated %d items' % count)
+                    log('Savepoint after updating %d items' % count,
+                        severity=logging.WARNING)
                     p_jar.cacheMinimize()
 
         if hasattr(aq_base(ob), 'objectItems'):
@@ -56,14 +59,20 @@ def update_rolemap(context):
             if obs:
                 for k, v in obs:
                     changed = getattr(v, '_p_changed', 0)
-                    count = count + update_mappings(v)
+                    count, last_count = update_mappings(v, count, last_count)
                     if changed is None:
                         # Re-ghostify.
                         v._p_deactivate()
-                    transaction.commit()
-                    p_jar.cacheMinimize()
-        return count
+                    if count - last_count >= COMMIT_LIMIT:
+                        transaction.commit()
+                        last_count = count
+                        log('Commit after updating %d items' % count,
+                            severity=logging.WARNING)
 
-    count = update_mappings(site)
-    log('Updated %d items' % count)
+                    p_jar.cacheMinimize()
+
+        return count, last_count
+
+    count, last_count = update_mappings(site, 0, 0)
+    log('Updated %d items' % count, severity=logging.WARNING)
     return

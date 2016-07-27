@@ -20,7 +20,7 @@
           <element>resourceRegistries</element>
       </value>
   </record>
-  <record name="plone.app.caching.weakCaching.plone.content.itemView.etags">
+  <record name="plone.app.caching.weakCaching.plone.content.folderView.etags">
       <field ref="plone.app.caching.weakCaching.etags" />
       <value>
           <element>userid</element>
