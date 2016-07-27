@@ -47,6 +47,7 @@ setup(name='pleiades.policy',
           'Products.CMFPlacefulWorkflow',
           'Products.CMFPlone',
           'Products.PleiadesEntity',
+          'collective.deletepermission',
           ],
       extras_require={
           'test': ['Products.PloneTestCase'],

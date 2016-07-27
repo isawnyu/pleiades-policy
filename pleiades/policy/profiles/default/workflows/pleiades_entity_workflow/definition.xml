@@ -15,6 +15,7 @@
  <permission>View</permission>
  <permission>iterate : Check out content</permission>
  <permission>CMFEditions: Save new version</permission>
+ <permission>Delete portal content</permission>
  <permission>Delete objects</permission>
 
  <state state_id="drafting" title="Drafting" i18n:attributes="title">
@@ -69,11 +70,14 @@
   <permission-map name="iterate : Check out content"
                   acquired="False">
   </permission-map>
-  <permission-map name="Delete objects"
-                  acquired="False">
+  <permission-map name="Delete portal content"
+                  acquired="True">
    <permission-role>Manager</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects"
+                  acquired="True">
   </permission-map>
  </state>
  <state state_id="pending" title="Pending review" i18n:attributes="title">
@@ -132,10 +136,13 @@
   <permission-map name="iterate : Check out content"
                   acquired="False">
   </permission-map>
-  <permission-map name="Delete objects"
+  <permission-map name="Delete portal content"
                   acquired="False">
    <permission-role>Manager</permission-role>
    <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects"
+                  acquired="True">
   </permission-map>
  </state>
  <state state_id="published" title="Published" i18n:attributes="title">
@@ -186,10 +193,13 @@
                   acquired="True">
    <permission-role>Member</permission-role>
   </permission-map>
-  <permission-map name="Delete objects"
+  <permission-map name="Delete portal content"
                   acquired="False">
    <permission-role>Manager</permission-role>
    <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects"
+                  acquired="True">
   </permission-map>
  </state>
 
