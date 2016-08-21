@@ -68,4 +68,14 @@
     import_steps="rolemap workflow"
     />
 
+  <upgradeDepends
+    sortkey="10"
+    source="0006"
+    destination="0007"
+    title="Update connection add permissions"
+    description=""
+    profile="pleiades.policy:default"
+    import_steps="rolemap"
+    />
+
 </configure>
