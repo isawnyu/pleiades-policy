@@ -211,7 +211,7 @@
   <description i18n:translate="">
     Publishing the item makes it visible to other users.
   </description>
-  <action url="%(content_url)s/content_status_modify?workflow_action=publish"
+  <action url="%(content_url)s/content_status_history?workflow_action=publish"
           category="workflow"
           i18n:translate="">Publish externally</action>
   <guard>
@@ -226,7 +226,7 @@
   <description i18n:translate="">
     Sending the item back will return the item to the original author instead of publishing it. You should preferably include a reason for why it was not published.
   </description>
-  <action url="%(content_url)s/content_status_modify?workflow_action=reject"
+  <action url="%(content_url)s/content_status_history?workflow_action=reject"
           category="workflow"
           i18n:translate="">Send back</action>
   <guard>
@@ -241,7 +241,7 @@
   <description i18n:translate="">
     If you submitted the item by mistake or want to perform additional edits, this will take it back.
   </description>
-  <action url="%(content_url)s/content_status_modify?workflow_action=retract"
+  <action url="%(content_url)s/content_status_history?workflow_action=retract"
           category="workflow"
           i18n:translate="">Retract</action>
   <guard>
@@ -256,7 +256,7 @@
   <description i18n:translate="">
     Puts your item in a review queue, so it can be published externally or internally.
   </description>
-  <action url="%(content_url)s/content_status_modify?workflow_action=submit"
+  <action url="%(content_url)s/content_status_history?workflow_action=submit"
           category="workflow"
           i18n:translate="">Submit for review</action>
   <guard>
