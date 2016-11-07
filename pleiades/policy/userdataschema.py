@@ -60,11 +60,11 @@ class MemberLinksView(BrowserView):
         mtool = getToolByName(self.context, 'portal_membership')
         user = mtool.getMemberById(userid)
         return {
-            'viaf_link': user.getProperty('viaf_link'),
-            'orcid_link': user.getProperty('orcid_link'),
-            'twitter_link': user.getProperty('twitter_link'),
-            'facebook_link': user.getProperty('facebook_link'),
-            'academia_link': user.getProperty('academia_link'),
-            'linkedin_link': user.getProperty('linkedin_link'),
-            'employer_link': user.getProperty('employer_link'),
+            'viaf_link': user.getProperty('viaf_link', None),
+            'orcid_link': user.getProperty('orcid_link', None),
+            'twitter_link': user.getProperty('twitter_link', None),
+            'facebook_link': user.getProperty('facebook_link', None),
+            'academia_link': user.getProperty('academia_link', None),
+            'linkedin_link': user.getProperty('linkedin_link', None),
+            'employer_link': user.getProperty('employer_link', None),
         }
