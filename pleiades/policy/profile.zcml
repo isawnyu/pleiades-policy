@@ -78,4 +78,14 @@
     import_steps="rolemap"
     />
 
+  <upgradeDepends
+    sortkey="10"
+    source="0007"
+    destination="0008"
+    title="Update member data and related adapters"
+    description=""
+    profile="pleiades.policy:default"
+    import_steps="memberdata-properties"
+    />
+
 </configure>
