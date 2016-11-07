@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<object name="portal_memberdata" meta_type="Plone Memberdata Tool">
+  <property name="viaf_link" type="string"></property>
+  <property name="orcid_link" type="string"></property>
+  <property name="twitter_link" type="string"></property>
+  <property name="facebook_link" type="string"></property>
+  <property name="academia_link" type="string"></property>
+  <property name="linkedin_link" type="string"></property>
+  <property name="employer_link" type="string"></property>
+</object>
