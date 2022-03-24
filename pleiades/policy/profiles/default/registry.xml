@@ -44,4 +44,10 @@
           <element>skin</element>
       </value>
   </record>
+  <record name="plone.app.caching.interfaces.IPloneCacheSettings.templateRulesetMapping">
+      <value purge="False">
+        <element key="author">plone.content.folderView</element>
+      </value>
+  </record>
+
 </registry>

@@ -33,8 +33,20 @@
     permission="cmf.ModifyPortalContent"
     />
 
+  <browser:page
+    name="member-links"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    class=".userdataschema.MemberLinksView"
+    allowed_attributes="links"
+    permission="zope2.View"
+    />
+
   <include file="profile.zcml" />
 
   <adapter factory=".caching.Accept" name="accept" />
+
+  <adapter provides=".userdataschema.IEnhancedUserDataSchema"
+           for="Products.CMFCore.interfaces.ISiteRoot"
+           factory=".userdataschema.EnhancedUserDataPanelAdapter" />
 
 </configure>

@@ -174,5 +174,15 @@
   <property name="external_links_open_new_window"
      type="string">false</property>
   <property name="icon_visibility" type="string">enabled</property>
+  <!-- property name="user_registration_fields" type="lines">
+    <element value="viaf_link" />
+    <element value="orcid_link" />
+    <element value="twitter_link" />
+    <element value="facebook_link" />
+    <element value="academia_link" />
+    <element value="linkedin_link" />
+    <element value="personal_link" />
+    <element value="employer_link" />
+  </property -->
  </object>
 </object>

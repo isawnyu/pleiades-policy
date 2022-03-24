@@ -87,5 +87,15 @@
     profile="pleiades.policy:default"
     import_steps="workflow"
     />
+  
+  <upgradeDepends
+    sortkey="10"
+    source="0008"
+    destination="0009"
+    title="Update member data and related adapters"
+    description=""
+    profile="pleiades.policy:default"
+    import_steps="memberdata-properties"
+    />
 
 </configure>
