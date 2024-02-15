@@ -88,4 +88,14 @@
     import_steps="workflow"
     />
 
+  <upgradeDepends
+    sortkey="10"
+    source="0008"
+    destination="0009"
+    title="Remove pleiades.portlet.pelagios portlet assignment"
+    description=""
+    profile="pleiades.policy:default"
+    import_steps="portlets"
+    />
+
 </configure>
