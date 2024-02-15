@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<portlets>
+
+ <assignment name="related-pelagios-content" category="content_type"
+    key="Place" manager="plone.rightcolumn"
+    type="pleiades.portlet.pelagios.PelagiosPortlet" visible="True"
+    remove="True" />
+
+ <portlet title="Related Pelagios Content"
+    addview="pleiades.portlet.pelagios.PelagiosPortlet"
+    remove="True" />
+
+</portlets>
